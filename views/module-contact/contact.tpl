@@ -8,18 +8,18 @@
 
 {elseif $addressPath[1] eq 'add'}
 
-Novo Contato
+{include file="module-contact/form.tpl"}
 
 {elseif $addressPath[1] eq 'edit'}
 
-Editar Contato
+{include file="module-contact/form.tpl"}
 
 {elseif $addressPath[1] eq 'delete'}
 
-Excluir Contato
+{include file="module-contact/delete.tpl"}
 
 {else}
 
-Página não encontrada
+{include file="includes/notfound.tpl"}
 
 {/if}
