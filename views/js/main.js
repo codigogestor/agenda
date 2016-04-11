@@ -24,9 +24,6 @@ $(document).ready(function () {
 
     }); /*click login button*/
 
-    $(document).ready(function(){
-        $('#userTable').DataTable();
-    });
-
+    $('#userTable').DataTable();
 
 }); /*document-ready*/

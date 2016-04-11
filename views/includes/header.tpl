@@ -24,6 +24,27 @@
 
         <link href="{$basePath}views/css/main.css" rel="stylesheet">
 
+        <script type="text/javascript">
+
+            var baseUrl = "{$baseUrl}";
+            var basePath = "{$basePath}";
+
+        </script>
+
+        <script src="{$basePath}views/js/jquery.js"></script>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+
+        <script src="{$basePath}views/js/bootstrap.min.js"></script>
+
+        <script src="{$basePath}views/js/jquery.dataTables.min.js"></script>
+
+        <script src="{$basePath}views/js/dataTables.bootstrap.min.js"></script>
+
+        <script src="{$basePath}views/js/main.js"></script>
+
+
+
         <!--[if lt IE 9]>
         <script src="js/html5shiv.js"></script>
         <script src="js/respond.min.js"></script>

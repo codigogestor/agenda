@@ -19,8 +19,8 @@
                 <li class="dropdown active">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contatos <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{$basePath}post/add">Novo Contato</a></li>
-                        <li><a href="{$basePath}post/list">Ver Contatos</a></li>
+                        <li><a href="{$basePath}contact/add">Novo Contato</a></li>
+                        <li><a href="{$basePath}contact/list">Ver Contatos</a></li>
                     </ul>
                 </li>
             </ul>
