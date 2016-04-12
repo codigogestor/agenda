@@ -1,13 +1,13 @@
 <?php
 
 #DATABASE SETTINGS
-$dbhost     = '192.185.218.125';
+$dbhost     = 'localhost';
 $baseUrl    = 'http://localhost/agenda/';
 $basePath   = '/agenda/';
-$dbname     = 'codigo_agenda';
+$dbname     = 'agenda';
 $dbcharset  = 'utf8';
-$dbuser     = 'codigo_agenda';
-$dbpassword = '@g&nD@99x!';
+$dbuser     = 'root'; 
+$dbpassword = 'admin';
 
 require_once 'loader.php';
 

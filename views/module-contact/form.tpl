@@ -22,9 +22,9 @@
 
               <form  ng-submit="sendContact()">
 
-                {*if $addressPath[1] eq 'edit'}
-                  <input type="text" ng-model="contact.contact_id" value="{literal}{{contact.contact_id}}{/literal}">
-                {/if*}
+                {if $addressPath[1] eq 'edit'}
+                  <input type="hidden" ng-model="contact.contact_id" >
+                {/if}
 
                 <div class="form-group">
                   <label for="name">Nome</label>
@@ -63,6 +63,43 @@
 
 </div>
 
-{*}<script>
-var contactID = {$addressPath[2]};
-</script>{*}
+<script>
+
+var contactID = "{$data.contact_id}";
+var contactName = "{$data.name}";
+var contactEmail = "{$data.email}";
+var contactPhone = "{$data.phone}";
+var contactCellPhone = "{$data.cellphone}";
+var contactNote = "{$data.note}";
+
+{literal}
+var appSet = angular.module('setContact',[]);
+appSet.controller('ctrlContact', function($scope, $http){
+    $scope.contact = {
+      contact_id: contactID,
+      name: contactName,
+      email: contactEmail,
+      phone: contactPhone,
+      cellphone: contactCellPhone,
+      note: contactNote
+    };
+
+    $scope.sendContact = function() {
+        var request = $http({
+            method: "post",
+            url: basePath + "contact?add=contact",
+            data: {
+                value: $scope.contact
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+        });
+
+      request.success(function (data) {
+
+        document.location.href=basePath + "contact/edit/" + data.id;
+
+      });
+    }
+});
+{/literal}
+</script>

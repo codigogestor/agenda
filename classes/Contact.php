@@ -18,10 +18,12 @@ class Contact {
 
     }
 
-    /*public function getSingleContact(){
+    public function getSingleContact(){
+
       try {
 
           $sql = "SELECT * FROM contact WHERE contact_id=:contact_id";
+
           $st = $this->db->prepare($sql);
           $id = $this->contact_id;
           $st->bindParam(':contact_id', $id, PDO::PARAM_INT);
@@ -33,7 +35,7 @@ class Contact {
       } catch (PDOException $e) {
           echo 'ERROR' . $e->getMessage();
       }
-    }*/
+    }
 
     public function getContacts(){
 
@@ -79,7 +81,7 @@ class Contact {
 
     }
 
-    /*public function updateContact(){
+    public function updateContact(){
 
       try {
 
@@ -99,9 +101,22 @@ class Contact {
           echo '<br>ERRO: ' . $e->getMessage();
       }
 
-    }*/
+    }
 
+    public function delete(){
 
+      try {
+
+          $sql = "DELETE FROM contact WHERE contact_id = '".$this->contact_id."'";
+
+          $this->db->exec($sql);
+          return true;
+
+      } catch (PDOException $e) {
+          echo '<br>ERRO: ' . $e->getMessage();
+      }
+
+    }
 
 
 

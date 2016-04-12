@@ -15,6 +15,32 @@ $(document).ready(function () {
         }, 'json').fail(function () {
             console.log('ERROR');
         });
-    }); /*click login button*/
-    $('#userTable').DataTable();
-}); /*document-ready*/ 
+    });
+
+
+    $(document).on('click','.removeContact', function(e){
+      e.preventDefault();
+
+      var id = $(this).attr('data-id');
+
+      $.ajax({
+        type: 'POST',
+        url: basePath + 'contact',
+        dataType: 'json',
+        data:{
+          removeContact : id
+        },
+        success: function(data){
+          if(data.status=='success'){
+            document.location.href= basePath + "contact/list";
+          }
+        },
+        error: function(data){
+          console.log('ERROR');
+        }
+
+      });
+
+    });
+
+}); /*document-ready*/

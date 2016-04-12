@@ -29,7 +29,7 @@
                 <td>{literal}{{ x.phone }}{/literal}</td>
                 <td>{literal}{{ x.cellphone }}{/literal}</td>
                 <td><a href="{$basePath}contact/edit/{literal}{{ x.contact_id }}{/literal}"><i class="fa fa-edit"></i></a></td>
-                <td><a href="{$basePath}contact/remove/{literal}{{ x.contact_id }}{/literal}"><i class="fa fa-remove"></i></a></td>
+                <td><a href="#" class="removeContact" data-id="{literal}{{ x.contact_id }}{/literal}"><i class="fa fa-remove"></i></a></td>
             </tr>
         </table>
 
