@@ -1,11 +1,2 @@
-  {literal}
-
-            <script>
-                
-            </script>
-
-        {/literal}
-
-    </body>
-
+</body>
 </html>

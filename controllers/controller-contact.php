@@ -1,24 +1,53 @@
 <?php
+
 if(isset($_GET['list'])){
 
-    $contact = new Contact();
-    $list['records'] = $contact->getContacts();
+  $contact = new Contact();
+  $list['records'] = $contact->getContacts();
+
+  writeJsonOutput($list);
+}
 
 
-    $jsonData = array(
-        'records' => array(
-            0 => array(
-                'Name' => 'Samuel Quaresma',
-                'Country' => 'Brasil'
-            ),
-            1 => array(
-                'Name' => 'Paula Mandruzatp',
-                'Country' => 'EUA'
-            )
-        )
-    );
+if(isset($_GET['edit'])){
 
-    writeJsonOutput($list);
+  $id = $_GET['edit'];
+
+  $contact = new Contact();
+  $contact->contact_id = $id;
+  $data = $contact->getSingleContact();
+
+  $register= array(
+    'records' => array(
+      'data'=>$data,
+    )
+  );
+
+  writeJsonOutput($register);
+}
+
+
+if(isset($_GET['add'])){
+
+  $postdata = file_get_contents("php://input");
+  $request = json_decode($postdata);
+
+  $insert = new Contact();
+
+  $insert->name = $request->value->name;
+  $insert->email = $request->value->email;
+  $insert->phone = $request->value->phone;
+  $insert->cellphone = $request->value->cellphone;
+  $insert->note = $request->value->note;
+
+  $insert->setContact();
+
+  if($insert->contact_id > 0){
+    $list = array('status'=>'success','message'=>'Alterações salvas com sucesso.');
+  } else {
+    $list = array('status'=>'error','message'=>'Ocorreu um erro ao salvar seus dados.');
+  }
+  writeJsonOutput($list);
 
 }
 
@@ -27,4 +56,5 @@ $template->assign('content','contact');
 
 
 
- ?>
+
+?>

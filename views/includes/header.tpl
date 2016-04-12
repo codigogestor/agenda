@@ -41,7 +41,9 @@
 
         <script src="{$basePath}views/js/dataTables.bootstrap.min.js"></script>
 
-        <script src="{$basePath}views/js/main.js"></script>
+        <script src="{$basePath}views/js/app-jquery.js"></script>
+
+        <script src="{$basePath}views/js/app-angular.js"></script>
 
 
 
