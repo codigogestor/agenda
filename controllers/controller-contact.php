@@ -9,7 +9,7 @@ if(isset($_GET['list'])){
 }
 
 
-if(isset($_GET['edit'])){
+/*if(isset($_GET['edit'])){
 
   $id = $_GET['edit'];
 
@@ -24,7 +24,7 @@ if(isset($_GET['edit'])){
   );
 
   writeJsonOutput($register);
-}
+}*/
 
 
 if(isset($_GET['add'])){

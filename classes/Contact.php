@@ -18,7 +18,7 @@ class Contact {
 
     }
 
-    public function getSingleContact(){
+    /*public function getSingleContact(){
       try {
 
           $sql = "SELECT * FROM contact WHERE contact_id=:contact_id";
@@ -33,7 +33,7 @@ class Contact {
       } catch (PDOException $e) {
           echo 'ERROR' . $e->getMessage();
       }
-    }
+    }*/
 
     public function getContacts(){
 
@@ -79,7 +79,7 @@ class Contact {
 
     }
 
-    public function updateContact(){
+    /*public function updateContact(){
 
       try {
 
@@ -99,7 +99,7 @@ class Contact {
           echo '<br>ERRO: ' . $e->getMessage();
       }
 
-    }
+    }*/
 
 
 

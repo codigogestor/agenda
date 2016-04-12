@@ -6,7 +6,7 @@ appList.controller('contatos', function($scope, $http) {
 
 var appSet = angular.module('setContact',[]);
 appSet.controller('ctrlContact', function($scope, $http){
-    $scope.contact = {contact_id: contactID};
+    //$scope.contact = {contact_id: contactID};
     $scope.sendContact = function() {
         var request = $http({
             method: "post",
@@ -23,9 +23,10 @@ appSet.controller('ctrlContact', function($scope, $http){
     }
 });
 
-
+/*
   var appGet = angular.module('setContact', []);
   appGet.controller('ctrlContact', function($scope, $http) {
      $http.get(basePath + "contact?edit=" + contactID)
      .then(function (response) {$scope.contact = response.data.records.data;});
   });
+*/

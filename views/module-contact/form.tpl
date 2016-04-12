@@ -22,9 +22,9 @@
 
               <form  ng-submit="sendContact()">
 
-                {if $addressPath[1] eq 'edit'}
+                {*if $addressPath[1] eq 'edit'}
                   <input type="text" ng-model="contact.contact_id" value="{literal}{{contact.contact_id}}{/literal}">
-                {/if}
+                {/if*}
 
                 <div class="form-group">
                   <label for="name">Nome</label>
@@ -63,6 +63,6 @@
 
 </div>
 
-<script>
+{*}<script>
 var contactID = {$addressPath[2]};
-</script>
+</script>{*}
